@@ -1,0 +1,147 @@
+
+/*input[type="radio"] {
+  margin-right: 10;
+  margin-bottom: 20;
+  margin-left: 20;
+}*/
+
+
+#chartContainer > table{
+	width: 250px;
+	height: 100%;
+}
+
+#showLayersLabel {
+    color: #7989a0;
+    font-size: 13px;
+}
+
+#filterContainer ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#filterContainer li { 
+  margin: 0 0 .2em 0;
+  border-bottom: 1px solid #eef2f5;
+  font-size: 13px;
+  
+ }
+
+#filterContainer a
+{
+  display: block;
+  background-color: white;
+  padding: 2px 4px;
+  margin: -1px 0 0 0px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #7989a0;
+}
+
+#filterContainer a:hover 
+{
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 100%;
+}
+
+#filterContainer li a:current {
+
+  background-color: #d9dde0;
+  padding: 2px 4px;
+  margin: -1px 0 0 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#filterContainer li a.current:hover {
+background-color: #d9dde0;
+}
+
+#filterContainer li.selected a:active {
+ background: #e2f6ff !important;
+}
+.spatialFilterLabel{
+  margin: 6px 4px;
+}
+.sectionHeading{
+  margin: 5px 0px;
+  font-weight: bold;
+  color: #82878B;
+  border-bottom:1px solid #D4E5F7;
+}
+.radioButtonLabel{
+  margin:6px 5px !important;
+}
+body {
+font: 12px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;
+}
+
+.legendIcon{
+  background-color: #FFCCEE;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/*.dynamicLegendTable{
+  width: 250px;
+  font-size: 9px;
+  overflow: auto;
+  margin-left: -36px;
+  position: absolute;
+  margin-top: -40px;
+  max-width: 250px !important;
+  max-height: 175px !important;
+  display: block;
+}
+*/
+
+div.legendContent {
+	/*width: 50px;*/
+	white-space: nowrap;
+	overflow:hidden;
+	/*text-overflow: ellipsis;*/
+	/*display: table-row;*/
+}
+
+.tabPane{
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  top:0;
+  bottom: 0;
+}
+.chartContent {
+	position: relative;
+	width:100%;
+	height:100%;
+}
+
+table.filterTable {
+	width:99%;
+	height:100%;
+}
+
+table.filterTable tbody {
+    height: 100%;
+    overflow: auto;
+}
+table.filterTable td {
+	width: 100%;
+    padding: 3px 10px;
+}
+
+table.filterTable thead, table.filterTable tr, table.filterTable tbody {
+    display:block;
+}
+table.reviewerSessions td, table.reviewerSessions tr, table.reviewerSessions thead, table.reviewerSessions tbody {
+	width:100%;
+	display: none;
+	/*margin: 10px 5px 0px 7px;*/
+}

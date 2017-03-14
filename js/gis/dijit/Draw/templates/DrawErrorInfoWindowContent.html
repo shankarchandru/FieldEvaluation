@@ -1,0 +1,49 @@
+<div class="gis_DrawDijit">
+	<div class="formContainer">
+		<form data-dojo-attach-point="formNode" class="drs-info-window-form" class="" >
+			<table align="center" border="0px" cols="2" width="80%">
+				<tr>
+					<td width="50%" align="right"><label style="margin:10px">Layer</label></td>
+					<td width="50%">
+						<select style="width:200px;margin:10px" data-dojo-type="dijit.form.Select" data-dojo-attach-point="layerNode" id="layerName" >
+							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" align="right"><label style="margin:10px">Review Status</label></td>
+					<td width="50%"><select style="width:200px;margin:10px" data-dojo-attach-point="statusNode" name="reviewStatus" >
+							<option>Missing Feature</option>
+							<option>Positional Error</option>
+							<option>Reshape Feature</option>
+						  </select>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" align="right"><label style="margin:10px">Notes</label></td>
+					<td width="50%"><textarea  style="width:200px;margin:10px" data-dojo-attach-point="notesNode" name="notes" rows="2"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td align="right" width="50%"><label style="margin:10px">Severity</label></td>
+					<td width="50%"><select style="width:200px;margin:10px" data-dojo-attach-point="severityNode" name="severity" >
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option selected>5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right" width="50%"><label style="margin:10px">Reported By</label></td>
+					<td width="50%"> <input type="text" style="width:200px;margin:10px" data-dojo-attach-point="reportedByNode" name="reviewTechnician" /></td>
+				</tr>
+				<tr>
+					<td align="right" width="50%"><input style="width:120px;margin:10px;padding:5px" type="submit" value="Report Feedback" /></td>
+					<td width="50%"> <input type="button" style="width:80px;margin:10px;padding:5px" data-dojo-attach-point="cancelNode" value="Cancel" /></td>
+				</tr>
+			</table>
+	  </form>
+	</div>
+</div>

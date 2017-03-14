@@ -1,0 +1,163 @@
+.gis_ValidateDataDijit {
+    width: 100%;
+}
+.gis_ValidateDataDijit .querySelect, .gis_ValidateDataDijit .searchText {
+	width:100%;
+	margin-bottom: 10px;
+}
+
+.gis_ValidateDataDijit .titleLabel{
+    box-shadow: inset 2px 1px rgba(230,230,230,0.5),  /*bottom internal shadow*/
+                inset 0 -30px 67px rgba(230,230,230,0.5); /*top internal highlight*/
+    font-family:"Calibri";
+    font-size:125%;
+    font-style:italic;
+    font-weight: bold;
+    border-color:rgba(0,0,0,0.5);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:2px;
+    border-bottom-left-radius:2px;
+    height:30px;
+    width:100%;
+}
+
+.gis_ValidateDataDijit #ProgressSanity {
+    /*background-color: #BDBDBD;
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #EFF0F0), color-stop(1, #B1B4B5));*/
+    box-shadow: inset 2px 1px rgba(250,250,250,0.5),  /*bottom internal shadow*/
+    inset 0 -30px 67px rgba(250,250,250,0.5); /*top internal highlight*/
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-right-radius:4px;
+    border-bottom-left-radius:4px;
+    position:relative;
+}
+
+.gis_ValidateDataDijit #ProgressSanity label {
+    height:25px;
+}
+
+.gis_ValidateDataDijit label {
+	width: 200%; 
+}
+.gis_ValidateDataDijit textarea {
+	width: 200px;
+}
+.gis_ValidateDataDijit label {
+	font-weight:bold;
+	margin-left: 5px;
+}
+
+.gis_ValidateDataDijit .containsCheck {
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.gis_ValidateDataDijit .clearButton {
+	margin-left: 70px;
+}
+
+.gis_ValidateDataDijit .searchIcon {
+    background-image: url(../images/search.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_ValidateDataDijit .clearIcon {
+    background-image: url(../images/clear.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_ValidateDataDijit label {
+	font-weight:bold;
+	margin-left: 5px;
+}
+
+.gis_ValidateDataDijit .resultsContainer {
+	font-weight: bold;
+	margin: 10px;
+	display: none;
+}
+
+.gis_ValidateDataDijit .dgrid {
+	height: 240px !important;
+	width:100%;
+	display: none;
+}
+
+.gis_ValidateDataDijit .dgrid .dgrid-scroller {
+	margin-top: 35px !important;
+}
+
+.gis_ValidateDataDijit .dgrid .dgrid-header th {
+	font-weight: bold;
+}
+
+.gis_ValidateDataDijit .dgrid .dgrid-cell {
+	font-size: 11px;
+	padding: 8px !important;
+	cursor: pointer;
+}
+
+.gis_ValidateDataDijit .dgrid .field-value {
+	width: 70%;
+}
+
+.gis_ValidateDataDijit .dgrid .field-foundFieldName {
+	display: none;
+}
+.dojoxUploaderFileList{
+	border:1px solid #ccc;
+	min-height:50px;
+}
+.dojoxUploaderFileListTable{
+	width:100%;
+	border-collapse:collapse;
+	margin-top:5px;
+}
+.dojoxUploaderFileListHeader th{
+	background-color:#eee;
+	padding:3px;
+}
+.dojoxUploaderFileListRow{
+
+}
+.dojoxUploaderIndex{
+	width:20px;
+}
+.dojoxUploaderIcon{
+	width:50px;
+}
+.dojoxUploaderFileName{
+
+}
+.dojoxUploaderSize{
+	width:70px;
+}
+.dojoxUploaderFileListContent{
+	width:100%;
+}
+.dojoxUploaderFileListProgress{
+	border:1px solid #666;
+	height:15px;
+	position:relative;
+	background:#fff;
+	overflow:hidden;
+}
+.dojoxUploaderFileListPercentText{
+	position:absolute;
+	right:3px;
+	top:3px;
+	font-size:10px;
+	text-align:right;
+}
+.dojoxUploaderFileListProgressBar{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:15px;
+	width:0%;
+	background:#bfe1fd;
+}

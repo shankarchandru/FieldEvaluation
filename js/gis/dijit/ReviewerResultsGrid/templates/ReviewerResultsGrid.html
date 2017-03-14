@@ -1,0 +1,40 @@
+<div>
+	<div data-dojo-attach-point="toolbarContainer">
+		<div id="toolbar1" data-dojo-type="dijit/Toolbar">
+			<div data-dojo-type="dijit/form/DropDownButton" data-dojo-attach-event="click:updateLifeCycleStatusDialog">
+			<span>Update Status </span>
+
+				<div data-dojo-type="dijit/TooltipDialog" data-dojo-id="StatusTooltipDialog" >
+					<table class="dijitDialogPaneContentArea">
+						<tr>
+							<td><label for="statusSelectLabel">Lifecycle Status:</label></td>
+							<td><input data-dojo-type="dijit/form/Select" name="statusSelect" id="statusSelect"></td>
+						</tr>
+						<tr>
+							<td><label for="address">Review Technician:</label></td>
+							<td><input data-dojo-type="dijit/form/TextBox" name="technicianName" id="technicianName"></td>
+						</tr>
+					</table>
+
+					<div class="dijitDialogPaneActionBar" id="dijitDialogPaneActionBar1">
+						<button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-event="click:updateLifeCycleStatus">Update</button>
+						<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-event="click:closeToolTipDialog">Cancel</button>
+					</div>
+				</div>		  
+<!-- 	  
+		  <div data-dojo-type="dijit/TooltipDialog" data-dojo-id="StatusTooltipDialog" >
+			 <label for="statusSelectLabel">Lifecycle Status:</label>
+			 <input data-dojo-type="dijit/form/Select" id="statusSelect" name="statusSelect"> 
+			 <label for="technicianLabel">Review Technician:</label> 
+			 <input data-dojo-type="dijit/form/TextBox" id="technicianName" name="technicianName" value=""><br>
+			 <button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-event="click:updateLifeCycleStatus">Update</button>
+			 <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-event="click:closeToolTipDialog">Cancel</button>
+		  </div>
+-->
+			</div>
+		</div>	
+	</div>
+	<div data-dojo-attach-point="gridContainer"></div>
+	<div data-dojo-attach-point="gridErrorMessage" style="visibility:hidden;color:red" title="" data-dojo-attach-event="click: _clearError"> 	Error in Grid
+	</div>
+</div>

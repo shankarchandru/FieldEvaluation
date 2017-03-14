@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />	
+    <title>Field Evaluation</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Authenticator(_users) {
+            this.Users = _users;
+
+            this.isValidLogin = function(username, password) {
+                for(var i = 0; i < this.Users.length;++i) {
+                    if(this.Users[i].username == username && this.Users[i].password == password)
+                        return true;
+                }
+                return false;
+            },
+                    this.GenerateGuid = function() {
+                        function _p8(s) {
+                            var p = (Math.random().toString(16)+"000000000").substr(2,8);
+                            return s ? "-" + p.substr(0,4) + "-" + p.substr(4,4) : p ;
+                        }
+                        return _p8() + _p8(true) + _p8(true) + _p8();
+                    },
+                    this.GetUser = function(username, password) {
+                        for(var i = 0; i < this.Users.length;++i) {
+                            if(this.Users[i].username == username && this.Users[i].password == password)
+                                return this.Users[i];
+                        }
+                        return null;
+                    }
+        }
+
+        function User(_username, _password, _apps, _sessions, _isAdmin) {
+            this.username = _username;
+            this.password = _password;
+            this.apps = _apps;
+            this.sessions = _sessions;
+            this.isAdmin = _isAdmin;
+            this.loginToken = null;
+        }
+
+        var users = [];
+        users.push(new User("Team A", "demo", ["scalebar","homeButton","legend","toc","draw","Dashboard","ValidateData","ResultsGrid","identify","Editor"], [2], false));
+        users.push(new User("Team B","demo",["scalebar","homeButton","legend","toc","draw","Dashboard","ValidateData","ResultsGrid","identify","Editor"], [3], false));
+        users.push(new User("Team C","demo",["scalebar","homeButton","legend","toc","draw","Dashboard","ValidateData","ResultsGrid","identify","Editor"], [4], false));
+        users.push(new User("Fieldtech1","demo",["scalebar","homeButton","legend","toc","ValidateData","draw","ResultsGrid","identify"], [5], false));
+        users.push(new User("Fieldtech2","demo",["scalebar","homeButton","legend","toc",,"draw","ValidateData","ResultsGrid","identify"], [6], false));
+        users.push(new User("admin","demo",[], [8], true));
+
+        function submitLogin() {
+            var username = document.getElementById("txtUserName").value;
+            var password = document.getElementById("txtPassword").value;
+            var auth = new Authenticator(users);
+            if(auth.isValidLogin(username, password)) {
+                var user = auth.GetUser(username, password);
+                user.loginToken = auth.GenerateGuid();
+                sessionStorage.setItem("loggedInUser",JSON.stringify(user));
+                window.location.href = "index.html";
+            }
+            else
+                alert("Invalid Login");
+        }
+    </script>
+</head>
+<body class="appBackground">
+
+    <div class="container">
+
+        <div class="appHeader">
+            <div class="headerLogo">
+                <img alt="logo" src="images/esri-logo.png" height="54" />
+            </div> 
+            <div class="headerTitle">Field Evaluation</div>
+        </div>
+        <!--<div class="sidebar"></div>-->
+        <br><br><br><br><br><br><br><br><br><br>
+		<form onsubmit="submitLogin();" action="javascript:submitLogin();">
+			<table align="center" valign="middle" style="width:60%;margin-left:auto;marign-right:auto">
+				<tr>
+					<td>
+						<table align="center" style="border: 4px groove #ABB8D3;background-color:#EEF1F6">
+							<tr>
+								<td align="right" style="font-size:medium;padding:20px 0px 4px 15px"><i>Username:</i>&nbsp;</td>
+								<td align="left" style="padding: 20px 15px 4px 0px"><input type="text" id="txtUserName" maxlength="32"/> </td>
+							</tr>
+							<tr>
+								<td align="right" style="font-size:medium;padding:0px 0px 10px 15px"><i>Password:</i>&nbsp;</td>
+								<td align="left" style="padding: 0px 15px 10px 0px"><input type="password" id="txtPassword" maxlength="32"/></td>
+							</tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<tr>
+								<td colspan="2" align="center" style="padding: 0px 0px 5px 0px">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Login" id="btnSubmit" onclick="submitLogin()" style="width:80px;height:25px"/></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</form>
+    </div>
+ <!--   <footer class="site-footer">
+
+    </footer> -->
+</body>
+</html>

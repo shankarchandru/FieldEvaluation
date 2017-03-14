@@ -1,0 +1,97 @@
+<div>
+	<div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabContainer" tabStrip="false" tabPosition="top" doLayout="false">
+		<div data-dojo-type="dijit/layout/ContentPane" id="dashboardTab" title="Dashboard" doLayout="false" style="width:100%; height:350px;">
+			<div class="chart-section">
+                <div id='mainChartContainer' class="mainChartContainer">
+                  <table>
+                    <tr>
+						<td align="top" style="width:280px !important; height:200px;">
+							<div id="noresults" style="position:absolute; top:80px; left:130px; display:none; font-color:grey; font-size:16px; font-style:italic">No Results Returned</div>
+							<div id="chartContainer"></div>
+						</td>
+						<td id="chartLegend" align="left"></td>
+                    </tr>
+                  </table>
+				</div>
+            </div>
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" id="filterTab" title="Filters" data-dojo-props="selected:true" doLayout="false" style="width:100%;height:350px">
+			<table class="filterTable">
+				<tbody>
+				<tr style="display:table">
+					<td style="width:80px !important;color: #7989a0;white-space:nowrap">Chart Type:</td>
+					<td style="width:2000px !important;color: #7989a0" colspan="2">
+						<span><input type="radio" name="chartTypeRadio" value="PIE" checked="checked" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-event="click: _onChartTypeClicked" class='radioButtonLabel'/>Pie</span>
+						<span><input type="radio" name="chartTypeRadio" value="BAR" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-event="click: _onChartTypeClicked" class='radioButtonLabel'/>Bar</span>
+					</td>
+				</tr>
+                <!--<tr>
+                    <td align="left" valign="middle" colspan="2"><span id="showLayersLabel">Show Reviewer Layers&nbsp;<input type="checkbox" name="showlayersCheckbox" style="width:12px;height:12px" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-event="click: _onShowLayersClicked"/></span></td>
+                </tr>-->
+				<tr>
+					<td colspan="3">
+						<div class="layer-section" style="margin: 0px 10px 10px 7px;"></div>
+						<div class='sectionHeading'>Set a spatial filter by defining a map area:</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="filterContainer" colspan="3">
+					  <ul>
+						<li><a href="#" id="DRAW" data-dojo-attach-event="click: _onSpatialFilterClicked"><div class='spatialFilterLabel'></div>
+						  Draw a result selection area on the map
+						</a></li>
+						<li><a href="#" id="EXTENT" data-dojo-attach-event="click: _onSpatialFilterClicked"><div class='spatialFilterLabel'></div>
+						  Show results only in current map extent
+						</a></li>
+						<li><a href="#"  id="NONE" data-dojo-attach-event="click: _onSpatialFilterClicked"><div class='spatialFilterLabel'></div>
+						  Use no spatial filter
+						</a></li>
+					  </ul>
+					</td>
+				</tr>
+				<tr>
+					<td id="filterContainer" colspan="3">
+						<div class="layer-section" style="margin: 0px 10px 10px 7px;"></div>
+						<div class='sectionHeading'>Reviewer Session</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<select style="color:#7989a0" data-dojo-attach-point="sessionNameSelect" data-dojo-attach-event="change: _onSessionChanged"></select>&nbsp;&nbsp;<input type="button" value="Refresh" style="color:#404754; padding: 2px 2px 2px 2px" data-dojo-attach-event="click: _onClickRefreshSessions"/>
+                    </td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="layer-section" style='margin:15px 10px 15px 0px;'></div>
+						<div class='sectionHeading'>Select field to display</div>
+					</td>
+				</tr>
+				<tr>
+					<td id="filterContainer" colspan="3">
+						<ul>  
+							<li>
+								<a href="#" ><input type="radio" name="fieldNamesRadio" value="severity" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Severity</a>
+							</li>
+							<li>
+								<a href="#"><input type="radio" name="fieldNamesRadio" value="featureobjectclass" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Feature/Object Class</a>
+							</li>
+							<li>
+								<a href="#"> <input type="radio" name="fieldNamesRadio" value="lifecyclestatus" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Lifecycle Status</a>
+							</li>
+							<li>
+								<a href="#"> <input type="radio" name="fieldNamesRadio"  value="subtype" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton"  data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Subtype</a>
+							</li>
+							<li>
+								<a href="#"> <input type="radio" name="fieldNamesRadio" value="checktitle" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton"  data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Check Title</a>
+							</li>
+							<li>
+								<a href="#" ><input type="radio" name="fieldNamesRadio" value="sessionid" style="width:13px;height:13px" data-dojo-type="dijit/form/RadioButton"  data-dojo-attach-event="click: _onRadioButtonClicked" class='radioButtonLabel'/>Session</a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

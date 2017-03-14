@@ -1,0 +1,115 @@
+<div class="gis_ValidateDataDijit">
+<div class="gis_ValidateDataDijit">
+    <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabContainer" tabStrip="false" tabPosition="top" doLayout="false">
+        <!-- <div data-dojo-type="dijit/layout/ContentPane" title="Check Schema" doLayout="false" data-dojo-props="selected:true" style="width:100%; height:210px;">
+            <div class="SanityCheck" width="100%">
+                <form id="mySanityForm" data-dojo-attach-point="validateSanityDijit" encType="multipart/form-data" action="upload.php" method = "post" >
+                    <table align="center" border="1px" width="98%">
+                        <tr>
+                            <td align="center" colspan = 3>
+                                <div class="titleLabel">
+                                <!--<table border="1px" width="100%">
+                                    <tr>
+                                        <td align="justify" > -->
+                                            <!-- <label class="titleLabel">  Upload Zipped FileGDB to check Schema  </label> -->
+                                        <!--</td>
+                                    </tr>
+                                </table> -->
+<!--                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></br></br></td>
+                        </tr>
+                        <tr>
+                            <td width="45%" align="right"><label style="margin:10px">Data (File GDB)</label></td>
+                            <td width="30%" height="60%"><input style="width:200px;margin:10px" type="text" value="" readonly data-dojo-attach-point="uploadedFilesSanityDijit" />
+                                <!--<div indeterminate="false" visibility="visible" id="progressBarHtml" class="progBar" data-dojo-type="dijit.ProgressBar" data-dojo-attach-point="progressBarHtml"> -->
+<!--                            </td>
+                            <td width="25%"><div id="btnHSanity" align="left" style="width:50px;margin:10px"  data-dojo-attach-point="uploadSanityDijit">Browse</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></br></br></td>
+                        </tr>
+                        <tr>
+                            <td width="45%" align="center" colspan = 3>
+                                <button width="30%"  id="executeSanity"  data-dojo-attach-point="executeSanityDijit" data-dojo-type="dijit.form.Button" data-dojo-attach-event="click:executeSanityJob">Validate Schema</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"> </br></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><div style="visibility:'hidden'" data-dojo-type="dijit.ProgressBar"  data-dojo-attach-point="ProgressDijitSanity" id="ProgressSanity"></div></td>
+                        </tr>
+                    </table>
+
+                </form>
+            </div>
+        </div> -->
+        <div data-dojo-type="dijit/layout/ContentPane" title="Submit Data"  doLayout="false" style="width:100%;height:300px">
+           <div class="QC Check">
+               <form id="myForm" data-dojo-attach-point="validateDataDijit" encType="multipart/form-data" action="upload.php" method = "post" >
+                   <table align="left" border="0px" width="95%">
+                       <tr>
+                           <td width="45%" align="right"><label style="margin:10px">Contributor Name</label></td>
+                           <td width="55%" colspan="2"><input style="width:200px;margin:10px" type="text" data-dojo-attach-point="contributorName" value="" id="contributorName" ></td>
+                       </tr>
+                       <tr>
+                           <td width="45%" align="right"><label style="margin:10px">Title</label></td>
+                           <td width="55%" colspan="2"><input style="width:200px;margin:10px" type="text" data-dojo-attach-point="title" value="" id="title" /></td>
+                       </tr>
+
+                       <tr>
+                           <td width="45%" align="right"><label style="margin:10px">Description</label></td>
+                           <td width="55%" colspan="2"><input style="width:200px;margin:10px" type="text" value="" id="desc" /></td>
+                       </tr>
+                       <tr>
+                           <td width="45%" align="right"><label style="margin:10px">Date</label></td>
+                           <td width="55%" colspan="2"><input style="width:200px;margin:10px" type="text"  data-dojo-type="dijit.form.DateTextBox" data-dojo-attach-point="dateTextBox" value="" id="hGroup" /></td>
+                       </tr>
+                       <tr>
+                           <td width="45%" align="right"><label style="margin:10px">Data (File GDB)</label></td>
+                           <td width="30%" height="60%"><input style="width:200px;margin:10px" type="text" value="" readonly data-dojo-attach-point="uploadedFilesDijit" />
+                               <!--<div indeterminate="false" visibility="visible" id="progressBarHtml" class="progBar" data-dojo-type="dijit.ProgressBar" data-dojo-attach-point="progressBarHtml"> -->
+                            </td>
+                            <td width="25%"><div id="btnH" align="left" style="width:50px;margin:10px"  data-dojo-attach-point="uploadDijit">Browse</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></br></br></td>
+                        </tr>
+                        <tr>
+                            <!-- <td align="center" width="30%" >
+                                <button width="30%"  id="viewSanityResults" data-dojo-attach-point="ViewSanityResultsDijit" data-dojo-type="dijit.form.Button" data-dojo-attach-event="click:populateGrid">View Results</button>
+                            </td> -->
+                            <!--<tr> -->
+                            <td align="center" width="100%" colspan = 3>
+                                <button width="25%"  id="scheduleJob" data-dojo-attach-point="scheduleJobDijit" data-dojo-type="dijit.form.Button" data-dojo-attach-event="click:scheduleQCJob">Submit Data </button>
+                            </td>
+                            <!-- </tr> -->
+                        </tr>
+                        <tr>
+                            <td colspan="3"> </br></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><div style="visibility:'hidden'" data-dojo-type="dijit.ProgressBar"  data-dojo-attach-point="ProgressDijit" id="Progress"></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div data-dojo-type="dijit.tree.ObjectStoreModel" data-dojo-id="myModel" data-dojo-attach-point="ObjectStoreModelDijit" ></div>
+                                <div data-dojo-attach-point="batchJobsDijitTree" data-dojo-props="showLabel:true, label: 'Sanity Batch Job', colspan:'3'"> </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" width= "100%" colspan="3">
+                                <div id="SanityResults" data-dojo-attach-point="SanityResultsDijit">
+                                    <div id="grid" data-dojo-attach-point="sanityResultsGridDijit" style="height:100%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+           </div>
+        </div>
+    </div>
+</div>

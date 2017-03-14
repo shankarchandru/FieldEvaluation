@@ -1,0 +1,40 @@
+		{
+			label : 'Check Title',
+			field : 'checktitle',
+			canEdit : false
+		},
+		{
+			label : 'Lifecycle Status',
+			field : 'lifecycleStatus',
+			canEdit : true,
+			editor : 'select',
+			editOn : has('touch') ? 'click' : 'dblclick'
+		},
+		{
+			label : "Resource",
+			field : resourceName,
+			canEdit : false
+		},
+		{
+			label : "Status",
+			field : reviewStatus,
+			canEdit : false		
+		},
+		{
+			label : "Severity",
+			field : severity,
+			canEdit : false		
+		},
+		{	
+			label : "Fixed By",
+			field : correctionTechnician,
+			canEdit : false	
+		},
+		{	
+			label : "Verified By",
+			field : verificationTechnician,
+			canEdit : false	
+		}
+		
+		
+{label : 'Check Title', editor : 'text', editOn : 'dblclick' }

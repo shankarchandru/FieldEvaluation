@@ -1,0 +1,40 @@
+<div class="gis_DrawDijit">
+    <div class="formContainer">
+        <div style="padding:5px;">
+            <table border="0px">
+                <tr>
+                    <td>
+                        <button data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'pointIcon',showLabel:false"
+                        data-dojo-attach-event="onClick:drawPoint">
+                            Point
+                        </button>
+                    </td>
+                    <td>
+                        <button data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'lineIcon',showLabel:false"
+                        data-dojo-attach-event="onClick:drawLine">
+                            Line
+                        </button>
+                    </td>
+                    <td>
+                        <button data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'polyIcon',showLabel:false"
+                        data-dojo-attach-event="onClick:drawPolygon">
+                            Polygon
+                        </button>
+                    </td>
+					<td>
+						<div class="buttonActionBar">
+							<button data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'clearIcon',showLabel:true"
+							data-dojo-attach-event="onClick:clearGraphics">
+								Clear Drawing
+							</button>
+						</div>
+					</td>
+				</tr>
+            </table>
+        </div>
+    </div>
+
+	<div id="popupDijit" data-dojo-attach-point="popupDijit"> 
+
+	</div>
+</div>

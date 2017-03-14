@@ -1,0 +1,81 @@
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Calibri;
+    font-size: 14px;
+}
+
+* {
+    margin: 0;
+}
+
+.appBackground {
+	background: url("../images/ScienceOfWhere.jpg");
+	background-size:100%;
+}
+
+.appHeader {
+    background: url("../images/linen.jpg") repeat-x scroll left top transparent;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.appHeader .headerLogo {
+    float: left;
+    left: 30px;
+    position: relative;
+    top: 8px;
+}
+
+.appHeader .headerTitle {
+    color: #FFFFFF;
+    float: left;
+    font-size: 30pt;
+    font-weight: bold;
+    left: 60px;
+    top: 10px;
+    position: relative;
+}
+
+.appHeader .subHeaderTitle {
+    color: #CFCFCF;
+    font-size: small;
+    padding-left: 20px;
+}
+
+.appHeader .search {
+    float: left;
+    left: 80px;
+    position: relative;
+    top: 18px;
+}
+
+.appHeader .headerLinks {
+    float: right;
+    color: #FFFFFF;
+    position: relative;
+    top: 27px;
+    right: 10px;
+    text-align:right;
+    display: inline-block;
+}
+
+.appHeader .headerLinks a {
+    color: #FFFFFF;
+}
+
+.container {
+    min-height: 100%;
+    margin-bottom: -350px;
+}
+
+.container:after {
+    content: "";
+    display: block;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />			
+        <title>Field Evaluation</title>
+        <link rel="stylesheet" type="text/css" href="http://localhost/webapps/arcgis_js_api/library/3.17/3.17/dojo/resources/dojo.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/webapps/arcgis_js_api/library/3.17/3.17/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/webapps/arcgis_js_api/library/3.17/3.17/esri/css/esri.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost/webapps/arcgis_js_api/library/3.17/3.17/dgrid/css/dgrid.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    </head>
+    <body class="dbootstrap">
+        <div class="appHeader">
+            <div class="headerLogo">
+                <img alt="logo" src="images/esri-logo.png" height="54" />
+            </div>
+            <div class="headerTitle">
+                Field Evaluation
+            </div>
+            <div class="headerLinks">
+                <!-- <div id="helpDijit" style="display:inline-blockk">
+                </div>&nbsp;&nbsp; -->
+                <div id="logoutDijit" class="dropdown">
+                    <a href="login.html">Logout &nbsp;
+                        <script type="text/javascript">
+                                var user = JSON.parse(sessionStorage.getItem("loggedInUser"));
+                                if( null != user ){
+                                    document.write(user.username);
+                                }
+                        </script>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="sidebarCollapseButton" class="sidebarCollapseButton close" style="display:none;"></div>		
+        <div id="bottombarCollapseButton" class="bottombarCollapseButton close" style="display:none;"></div>
+        <script type="text/javascript">
+            var dojoConfig = {
+                async: true,
+                packages: [{
+                    name: 'viewer',
+                    location: location.pathname.replace(/[^\/]+$/, '') + 'js/viewer'
+                },{
+                    name: "config",
+                    location: location.pathname.replace(/[^\/]+$/, '') + "js/config"
+                },{
+                    name: 'gis',
+                    location: location.pathname.replace(/[^\/]+$/, '') + 'js/gis'
+                },{
+                    name: 'dbootstrap',
+                    location: location.pathname.replace(/[^\/]+$/, '') + 'js/dbootstrap'
+                },{
+					name : 'stores',
+					location: location.pathname.replace(/[^\/]+$/, '') + 'js/gis/stores'
+				}]
+            };
+        </script>
+        <script type="text/javascript" src="http://localhost/webapps/arcgis_js_api/library/3.17/3.17/init.js"></script>
+        <script type="text/javascript">
+            var app; //dev only
+            require(['dbootstrap','viewer/Controller','dijit/registry','dojo/_base/lang'], function(dbootstrap,Controller, registry, lang){
+
+                var user = JSON.parse(sessionStorage.getItem("loggedInUser"));
+                
+				if(null == user) {
+                    alert("User not logged in. Please login to application");
+                    window.location.href = "login.html";
+                } 
+
+                Controller.startup();
+                app = Controller; //dev only
+				Controller.onWidgetsLoaded = function() {
+					//wire up communication between dashboard and results grid
+					var dashboard = registry.byId("Dashboard_widget");
+					if(null != dashboard) {
+						dashboard.on("chartClicked", lang.hitch(this, function(eventArgs) {
+							if(!app.isPaneOpen("bottombar"))
+								app.togglePane("bottombar");
+							var grid = registry.byId("ResultsGrid_widget");
+							var query = {};
+							query[eventArgs.fieldName] = eventArgs.fieldValue;
+							if(eventArgs.sessionId != -1)
+								query["sessionid"] = eventArgs.sessionId;
+								
+							grid.setQuery(query);
+							
+						}));
+					}
+				};
+            });
+        </script>
+    </body>
+</html>
